@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Jokify Lab - Commissions & Order Hub</title>
+  <meta name="description" content="Website orderan resmi Jokify Lab. Pesan joki skripsi, website, PPT presentasi, makalah, dan olah data langsung via DM Instagram @jokify.lab!">
+
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pb-24 selection:bg-yellow-300 selection:text-black">
+
+  <div class="marquee-container select-none">
+    <div class="marquee-content flex gap-6 items-center">
+      <span>⚠️ PERHATIAN: JOKIFY LAB COMMISSIONS (@jokify.lab)</span>
+      <span>★</span>
+      <span>ORDER LANGSUNG VIA DM INSTAGRAM @jokify.lab</span>
+      <span>★</span>
+      <span>FREE BIMBINGAN & REVISI 7X KHUSUS SKRIPSI</span>
+      <span>★</span>
+      <span>100% AMANAH & KERAHASIAAN TERJAMIN</span>
+      <span>★</span>
+      <span>PAYMENT: QRIS ONLY (ALL E-WALLET & M-BANKING)</span>
+      <span>★</span>
+      <span>SOLUSI INSTAN TUGAS, SKRIPSI, WEBSITE & PPT</span>
+      <span>★</span>
+      <span>⚠️ PERHATIAN: JOKIFY LAB COMMISSIONS (@jokify.lab)</span>
+      <span>★</span>
+      <span>ORDER LANGSUNG VIA DM INSTAGRAM @jokify.lab</span>
+      <span>★</span>
+      <span>FREE BIMBINGAN & REVISI 7X KHUSUS SKRIPSI</span>
+      <span>★</span>
+      <span>100% AMANAH & KERAHASIAAN TERJAMIN</span>
+      <span>★</span>
+      <span>PAYMENT: QRIS ONLY (ALL E-WALLET & M-BANKING)</span>
+      <span>★</span>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b-2 border-black">
+    <div class="max-w-md mx-auto px-3 py-2 flex items-center justify-between">
+
+      <div class="flex items-center gap-2 cursor-pointer" onclick="switchView('home')">
+        <img src="logo.png" alt="Jokify Lab Logo" onclick="event.stopPropagation(); mascotTapEffect(this);" title="Jokify Lab Logo" class="w-8 h-8 rounded-lg border border-black object-cover shadow-[1px_1px_0_#000] hover:scale-110 active:scale-90 transition-transform bg-white">
+        <div>
+          <div class="font-extrabold text-sm tracking-tight leading-none text-gray-900 flex items-center gap-1">
+            <span>Jokify Lab</span>
+            <span class="bg-[#ff7f50] text-white text-[9px] font-black px-1.5 py-0.2 rounded-full border border-black shadow-[1px_1px_0_#000] shimmer-badge">PRO</span>
+          </div>
+          <div class="flex items-center gap-1 text-[10px] text-green-700 font-bold mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span>
+            <span>OPEN COMMISSIONS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        
+        <a href="https://ig.me/m/jokify.lab" target="_blank" class="px-2 py-1 rounded-lg border-2 border-black bg-pink-100 hover:bg-pink-200 text-pink-950 font-black text-xs flex items-center gap-1 shadow-[1.5px_1.5px_0_#000] active:translate-x-0.5 active:translate-y-0.5">
+          <span>📸</span>
+          <span>DM IG</span>
+        </a>
+
+        <button id="sound-toggle-btn" class="w-7 h-7 rounded-lg border-2 border-black bg-white flex items-center justify-center text-xs font-bold shadow-[1px_1px_0_#000]" title="Sound Effect">
+          🔊
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto px-3 pt-3">
+
+    <div id="view-home" class="view-panel space-y-4">
+
+      <div class="retro-card apple-reveal overflow-hidden bg-white border-2 border-black p-4 relative">
+        <div class="washi-tape washi-tape-cyan -top-2 left-6 w-24 -rotate-3"></div>
+        <div class="washi-tape washi-tape-pink -top-2 right-6 w-20 rotate-2"></div>
+
+        <div class="flex items-center justify-between text-[11px] font-mono text-gray-600 mb-2 pt-1 border-b border-dashed border-gray-300 pb-2">
+          <div class="flex items-center gap-1 font-bold">
+            <span>⏰</span> <span id="hero-clock">--:--:-- WIB</span>
+          </div>
+          <div id="hero-date" class="text-right text-[10px] font-semibold text-gray-500">
+            Sabtu, 24 Okt 2026
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center text-center my-2 relative">
+          
+          <div class="relative mb-3 group cursor-pointer" onclick="mascotTapEffect(this.querySelector('img'))" title="Klik logo untuk kejutan!">
+            <div class="absolute -top-3 -left-3 text-lg star-twinkle select-none pointer-events-none">✨</div>
+            <div class="absolute -top-2 -right-4 text-base star-twinkle-delay select-none pointer-events-none">★</div>
+            <img src="logo.png" alt="Jokify Lab Official Logo" class="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl border-2 border-black shadow-[4px_4px_0_#000] object-cover float-bob transition-transform group-hover:scale-105 active:scale-95 bg-white">
+            <span class="absolute -bottom-2 -right-2 bg-yellow-300 text-black text-[10px] font-black px-2 py-0.5 rounded-full border border-black shadow-[1.5px_1.5px_0_#000] shimmer-badge">
+              OFFICIAL
+            </span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">
+            Tugas & Skripsi Beres, <br>
+            <span class="text-indigo-600 underline decoration-yellow-400 decoration-wavy">Tidur Nyenyak!</span> ✨
+          </h1>
+
+          <p class="text-xs text-gray-600 mt-2 px-2 leading-relaxed">
+            Welcome to <strong>Jokify Lab</strong>. Solusi instan buat kamu yang gamau repot-repot ngerjain tugas, skripsi, atau tugas lain. Kita aja yang kerjain!
+          </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 gap-2 mt-4">
+          <button onclick="switchView('menu')" class="retro-btn retro-btn-yellow py-3 text-sm flex items-center justify-center gap-2 pulse-border">
+            <span>📋</span>
+            <span>Lihat Menu Pricelist & Buat Order</span>
+            <span>➔</span>
+          </button>
+          
+          <button onclick="openInstagramDM()" class="retro-btn retro-btn-sm bg-pink-100 hover:bg-pink-200 text-pink-900 border-2 border-black text-xs font-bold w-full py-2.5">
+            📸 Chat & DM Instagram @jokify.lab
+          </button>
+        </div>
+
+      </div>
+
+      <div class="sticky-note apple-reveal p-3 text-xs font-bold text-gray-900">
+        <div class="sticky-note-pin"></div>
+        <div class="grid grid-cols-2 gap-2 text-left pt-1">
+          <div class="flex items-start gap-1.5">
+            <span class="text-green-700 font-extrabold">✓</span>
+            <span class="text-[11px]">Free Bimbingan & Revisi 7x (Khusus Skripsi)</span>
+          </div>
+          <div class="flex items-start gap-1.5">
+            <span class="text-blue-700">🔒</span>
+            <span class="text-[11px]">Kerahasiaan Data & Nilai 100% Amanah</span>
+          </div>
+          <div class="flex items-start gap-1.5">
+            <span class="text-red-700">⚡</span>
+            <span class="text-[11px]">Pengerjaan Kilat & Sesuai Deadline</span>
+          </div>
+          <div class="flex items-start gap-1.5">
+            <span class="text-purple-700">💳</span>
+            <span class="text-[11px]">Metode Pembayaran: QRIS All Bank</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="retro-card apple-reveal p-3.5 bg-white">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-extrabold text-xs text-gray-900 uppercase tracking-wider flex items-center gap-1.5">
+            <span>🔥</span> Kategori Layanan Unggulan
+          </h2>
+          <button onclick="switchView('menu')" class="text-indigo-600 font-bold text-[11px] hover:underline">
+            Lihat Semua (9) ➔
+          </button>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <div onclick="openItemSheet('skripsi')" class="p-2 border border-black rounded-lg bg-yellow-50 text-center cursor-pointer active:scale-95 transition">
+            <div class="text-xl">🎓</div>
+            <div class="font-bold text-[11px] text-gray-900 mt-1">Skripsi</div>
+            <div class="text-[10px] text-indigo-700 font-extrabold">2jt - 3.5jt</div>
+          </div>
+          <div onclick="openItemSheet('website')" class="p-2 border border-black rounded-lg bg-green-50 text-center cursor-pointer active:scale-95 transition">
+            <div class="text-xl">💻</div>
+            <div class="font-bold text-[11px] text-gray-900 mt-1">Website</div>
+            <div class="text-[10px] text-indigo-700 font-extrabold">500k - 1.5jt</div>
+          </div>
+          <div onclick="openItemSheet('ppt')" class="p-2 border border-black rounded-lg bg-orange-50 text-center cursor-pointer active:scale-95 transition">
+            <div class="text-xl">📊</div>
+            <div class="font-bold text-[11px] text-gray-900 mt-1">Bikin PPT</div>
+            <div class="text-[10px] text-indigo-700 font-extrabold">50k / 10lbr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="retro-card apple-reveal p-3.5 bg-[#fffef0]">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-extrabold text-xs text-gray-900 uppercase tracking-wider flex items-center gap-1.5">
+            <span>⭐</span> Kata Mereka yang Sudah Lulus
+          </h2>
+          <span class="text-[10px] bg-green-200 text-green-900 font-bold px-1.5 py-0.2 rounded">100% Real</span>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="p-2 bg-white rounded border border-gray-300 text-[11px]">
+            <div class="text-amber-500 font-bold text-[10px]">★★★★★</div>
+            <p class="text-gray-700 italic">"Adminnya responsif sama revisi yang diaksih dosen. Top lah pokoknya"</p>
+            <div class="font-bold text-gray-900 text-[10px] mt-1">— Na***a, Manajemen U***U 2026</div>
+          </div>
+          <div class="p-2 bg-white rounded border border-gray-300 text-[11px]">
+            <div class="text-amber-500 font-bold text-[10px]">★★★★★</div>
+            <p class="text-gray-700 italic">"Bimbingan 2x doang langsung maju sidang akwoakwoakwoak"</p>
+            <div class="font-bold text-gray-900 text-[10px] mt-1">— Di**s, Pend. Manajemen 2026 U******ED</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="view-menu" class="view-panel space-y-3 hidden">
+
+      <div class="relative">
+        <span class="absolute left-3 top-2.5 text-gray-400 text-xs">🔍</span>
+        <input type="search" id="menu-search-input" placeholder="Cari layanan (skripsi, web, ppt, spss)..." class="retro-input pl-8 text-xs py-2">
+      </div>
+
+      <div class="cat-bar" id="category-pills">
+        <button type="button" class="cat-pill active" data-category="all">Semua</button>
+        <button type="button" class="cat-pill" data-category="skripsi">🎓 Skripsi</button>
+        <button type="button" class="cat-pill" data-category="website">💻 Website</button>
+        <button type="button" class="cat-pill" data-category="ppt">📊 PPT</button>
+        <button type="button" class="cat-pill" data-category="format">📑 Format & Paper</button>
+        <button type="button" class="cat-pill" data-category="makalah">📚 Makalah</button>
+        <button type="button" class="cat-pill" data-category="data">📈 Olah Data</button>
+        <button type="button" class="cat-pill" data-category="desain">🎨 Desain</button>
+      </div>
+
+      <div class="space-y-2.5" id="menu-items-container">
+        
+      </div>
+
+    </div>
+
+    <div id="view-cart" class="view-panel space-y-4 hidden">
+
+      <div class="retro-card apple-reveal p-4 bg-white">
+        <div class="flex items-center justify-between border-b-2 border-dashed border-gray-300 pb-2 mb-3">
+          <div>
+            <h2 class="font-black text-sm text-gray-900 flex items-center gap-1.5">
+              <span>🛒</span> KERANJANG PESANAN
+            </h2>
+            <div class="text-[11px] text-gray-500">Periksa layanan yang telah kamu pilih</div>
+          </div>
+          <button onclick="clearCart()" class="text-xs text-red-600 font-bold hover:underline">
+            Kosongkan
+          </button>
+        </div>
+
+        <div id="cart-items-list" class="space-y-2 text-xs">
+          
+        </div>
+
+        <div id="cart-empty-state" class="py-6 text-center text-xs text-gray-500">
+          <div class="text-3xl mb-1">🛒</div>
+          <div class="font-bold text-gray-800">Keranjang Masih Kosong</div>
+          <p class="text-[11px] mt-0.5">Pilih layanan di menu katalog terlebih dahulu ya kak.</p>
+          <button onclick="switchView('menu')" class="retro-btn retro-btn-yellow retro-btn-sm mt-3 text-xs">
+            + Buka Menu Katalog
+          </button>
+        </div>
+      </div>
+
+      <div id="cart-customer-section" class="retro-card apple-reveal p-4 bg-[#faf9f5] space-y-3">
+        <div class="flex items-center gap-1.5 border-b border-gray-300 pb-2">
+          <span class="w-5 h-5 rounded-full bg-black text-white font-bold text-xs flex items-center justify-center">✎</span>
+          <h3 class="font-extrabold text-xs text-gray-900 uppercase tracking-wider">
+            Data Pemesan & Deadline
+          </h3>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Nama Lengkap / Panggilan: *</label>
+          <input type="text" id="cart-cust-nama" placeholder="Kakak Mahasiswa" required class="retro-input text-xs py-1.5">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Username Instagram Kamu: *</label>
+          <div class="relative">
+            <span class="absolute left-2.5 top-2 text-gray-400 font-bold text-xs">@</span>
+            <input type="text" id="cart-cust-ig" placeholder="username_kamu" required class="retro-input text-xs py-1.5 pl-6">
+          </div>
+          <div class="text-[10px] text-gray-500 italic mt-0.5">Agar admin tahu saat kamu kirim DM Instagram ke @jokify.lab.</div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">No. WhatsApp / HP (Opsional):</label>
+          <input type="tel" id="cart-cust-wa" placeholder="081234567890" class="retro-input text-xs py-1.5">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 mb-1">Deadline Tanggal: *</label>
+            <input type="date" id="cart-deadline-date" class="retro-input text-xs py-1.5">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 mb-1">Jam Deadline:</label>
+            <input type="time" id="cart-deadline-time" value="23:59" class="retro-input text-xs py-1.5">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Prioritas Pengerjaan:</label>
+          <div class="grid grid-cols-3 gap-1.5">
+            <label class="radio-card text-center p-1.5 text-xs">
+              <input type="radio" name="cart-priority" value="reguler" checked class="accent-indigo-600 mb-0.5">
+              <div class="font-bold text-[11px] text-gray-900">Reguler</div>
+              <div class="text-[9px] text-gray-500">Rp 0</div>
+            </label>
+            <label class="radio-card text-center p-1.5 text-xs">
+              <input type="radio" name="cart-priority" value="express" class="accent-indigo-600 mb-0.5">
+              <div class="font-bold text-[11px] text-orange-600">⚡ Kilat</div>
+              <div class="text-[9px] text-gray-500">&lt;48 Jam (+20%)</div>
+            </label>
+            <label class="radio-card text-center p-1.5 text-xs">
+              <input type="radio" name="cart-priority" value="urgent" class="accent-indigo-600 mb-0.5">
+              <div class="font-bold text-[11px] text-red-600">🔥 Super</div>
+              <div class="text-[9px] text-gray-500">&lt;24 Jam (+40%)</div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Catatan Tambahan (Opsional):</label>
+          <textarea id="cart-cust-notes" rows="2" placeholder="Catatan instruksi khusus dari dosen..." class="retro-input text-xs py-1.5"></textarea>
+        </div>
+
+        <div class="receipt-paper p-3 font-mono text-xs space-y-1 mt-2">
+          <div class="flex justify-between text-gray-600">
+            <span>Subtotal Layanan:</span>
+            <span id="cart-sum-subtotal" class="font-bold text-gray-900">Rp 0</span>
+          </div>
+          <div class="flex justify-between text-gray-600">
+            <span>Biaya Prioritas:</span>
+            <span id="cart-sum-priority" class="font-bold text-gray-900">Rp 0</span>
+          </div>
+          <div class="border-t-2 border-dashed border-gray-400 pt-1.5 mt-1 flex justify-between items-center text-sm font-black">
+            <span>TOTAL ESTIMASI:</span>
+            <span id="cart-sum-total" class="text-indigo-700 text-base font-extrabold">Rp 0</span>
+          </div>
+        </div>
+
+        <button onclick="checkoutToInstagramDM()" class="retro-btn retro-btn-purple w-full py-3 text-sm flex items-center justify-center gap-2">
+          <span>📸</span>
+          <span>Kirim Order ke DM Instagram (@jokify.lab)</span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <div id="view-faq" class="view-panel space-y-4 hidden">
+
+      <div class="retro-card apple-reveal p-4 bg-white">
+        <h2 class="font-black text-sm text-gray-900 mb-2 flex items-center gap-1.5">
+          <span>📌</span> ALUR PEMESANAN DI JOKIFY LAB
+        </h2>
+        <div class="space-y-2 text-xs">
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-yellow-300 text-black font-bold flex items-center justify-center flex-shrink-0 text-[11px]">1</span>
+            <div><strong>Pilih Layanan:</strong> Masuk ke tab Menu dan pilih paket yang kamu butuhkan.</div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-yellow-300 text-black font-bold flex items-center justify-center flex-shrink-0 text-[11px]">2</span>
+            <div><strong>Sesuaikan Opsi:</strong> Atur jumlah slide, bab skripsi, atau sampel data.</div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-yellow-300 text-black font-bold flex items-center justify-center flex-shrink-0 text-[11px]">3</span>
+            <div><strong>Kirim ke DM Instagram:</strong> Rincian otomatis disalin ke clipboard, langsung kirim DM ke <strong>@jokify.lab</strong>!</div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-yellow-300 text-black font-bold flex items-center justify-center flex-shrink-0 text-[11px]">4</span>
+            <div><strong>DP & Pengerjaan:</strong> Bayar DP via QRIS, tugas langsung dikerjakan ahli.</div>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-yellow-300 text-black font-bold flex items-center justify-center flex-shrink-0 text-[11px]">5</span>
+            <div><strong>Review & Revisi 7x:</strong> Periksa hasil dan manfaatkan gratis revisi 7x!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="retro-card apple-reveal p-4 bg-white">
+        <h2 class="font-black text-sm text-gray-900 mb-2 flex items-center gap-1.5">
+          <span>❓</span> PERTANYAAN POPULER
+        </h2>
+
+        <div class="space-y-2 text-xs">
+          <details class="group border border-black rounded-lg p-2.5 bg-gray-50">
+            <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+              <span>Bisa pesan Bab 1–3 dulu baru lanjut Bab 4–5?</span>
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="mt-2 text-gray-600 pl-2 border-l-2 border-indigo-400">
+              Bisa banget! Namun jika kamu memesan Bab 1–3 dan Bab 4–5 sekaligus secara bersamaan, sistem secara cerdas akan langsung menggabungkannya ke <strong>Paket Resmi Bab 1–5 Lengkap</strong> (Rp 1.500.000 untuk Data Sendiri atau Rp 2.000.000 + Manipulasi Data). Pengerjaan jadi sinkron, tuntas, dan bergaransi Free 7x Revisi!
+            </p>
+          </details>
+
+          <details class="group border border-black rounded-lg p-2.5 bg-gray-50">
+            <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+              <span>Berapa kali revisi gratis untuk skripsi?</span>
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="mt-2 text-gray-600 pl-2 border-l-2 border-indigo-400">
+              Khusus joki skripsi, kami berikan <strong>Free Bimbingan & Revisi 7x</strong>! Jika lebih dari 7x, biayanya sangat hemat hanya Rp 5.000 / revisi.
+            </p>
+          </details>
+
+          <details class="group border border-black rounded-lg p-2.5 bg-gray-50">
+            <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+              <span>Apakah data dan identitas saya aman?</span>
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="mt-2 text-gray-600 pl-2 border-l-2 border-indigo-400">
+              <strong>100% Rahasia!</strong> Kami menjaga privasi setiap klien dengan integritas penuh. Nama, kampus, dan file tidak pernah disebarluaskan.
+            </p>
+          </details>
+
+          <details class="group border border-black rounded-lg p-2.5 bg-gray-50">
+            <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+              <span>Bagaimana metode pembayarannya?</span>
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="mt-2 text-gray-600 pl-2 border-l-2 border-indigo-400">
+              Pembayaran menggunakan <strong>QRIS</strong>. Kamu bisa scan lewat semua aplikasi e-wallet (GoPay, OVO, Dana, ShopeePay) serta mobile banking seluruh bank.
+            </p>
+          </details>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <div id="itemSheet" class="sheet-backdrop" onclick="handleSheetBackdropClick(event, 'itemSheet')">
+    <div class="sheet" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+      <div class="sheet-handle" onclick="closeSheet('itemSheet')"></div>
+      
+      <div class="sheet-body space-y-3">
+        
+        <div class="flex items-start justify-between border-b border-gray-200 pb-2">
+          <div>
+            <span id="sheet-item-cat" class="text-[10px] uppercase font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">KATEGORI</span>
+            <h3 id="sheet-item-name" class="font-black text-base text-gray-900 mt-1">Nama Layanan</h3>
+            <p id="sheet-item-desc" class="text-xs text-gray-500 mt-0.5">Deskripsi singkat layanan</p>
+          </div>
+          <button onclick="closeSheet('itemSheet')" class="w-6 h-6 rounded-full bg-gray-200 text-gray-700 font-bold flex items-center justify-center text-xs">✕</button>
+        </div>
+
+        <div id="sheet-dynamic-options" class="space-y-3">
+          
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Catatan Tugas / Instruksi Khusus:</label>
+          <textarea id="sheet-item-notes" rows="2" placeholder="Tulis instruksi khusus dari dosen atau kebutuhan tugas..." class="retro-input text-xs py-1.5"></textarea>
+        </div>
+
+        <div class="pt-2 border-t border-gray-200 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">Estimasi Biaya</div>
+            <div id="sheet-item-price-preview" class="text-base font-extrabold text-indigo-700 leading-tight">Rp 0</div>
+          </div>
+          <button onclick="addItemToCartFromSheet()" class="retro-btn retro-btn-yellow py-2 px-4 text-xs font-black flex-1">
+            ✓ Tambah ke Keranjang
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-cart-bar" class="mobile-cart-bar hidden-bar" onclick="switchView('cart')">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded-full bg-yellow-300 text-black font-extrabold text-xs flex items-center justify-center border border-black" id="bar-cart-count">
+        1
+      </span>
+      <div>
+        <div class="text-[10px] text-gray-300 font-semibold" id="bar-cart-desc">1 Layanan Dipilih</div>
+        <div class="text-sm font-black text-yellow-300 leading-tight" id="bar-cart-total">Rp 0</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-1 text-xs font-bold bg-white text-black px-2.5 py-1 rounded-lg border border-black shadow-[1.5px_1.5px_0_#fed752]">
+      <span>Lihat Pesanan</span>
+      <span>➔</span>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <div class="nav-tab active" data-target="home" onclick="switchView('home')">
+      <span class="text-lg">🏠</span>
+      <span>Beranda</span>
+    </div>
+    <div class="nav-tab" data-target="menu" onclick="switchView('menu')">
+      <span class="text-lg">📋</span>
+      <span>Pricelist</span>
+    </div>
+    <div class="nav-tab" data-target="cart" onclick="switchView('cart')">
+      <span class="text-lg">🛒</span>
+      <span>Keranjang</span>
+      <span class="nav-tab-badge hidden" id="nav-cart-badge">0</span>
+    </div>
+    <div class="nav-tab" data-target="faq" onclick="switchView('faq')">
+      <span class="text-lg">❓</span>
+      <span>Bantuan</span>
+    </div>
+  </nav>
+
+  <div id="sentModal" class="sheet-backdrop" onclick="handleSheetBackdropClick(event, 'sentModal')">
+    <div class="sheet" style="max-height: 85vh;" onclick="event.stopPropagation()">
+      <div class="sheet-handle" onclick="closeSheet('sentModal')"></div>
+      <div class="sheet-body text-center p-4 space-y-3">
+        <div class="w-14 h-14 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center text-2xl mx-auto border-2 border-black shadow-[2px_2px_0_#000]">
+          📸
+        </div>
+        <h3 class="font-black text-lg text-gray-900">Format Order Disalin!</h3>
+        <p class="text-xs text-gray-600">
+          Format rincian pesanan sudah <strong>OTOMATIS DISALIN</strong> ke clipboard kamu. Silakan klik tombol di bawah untuk membuka DM Instagram <strong>@jokify.lab</strong>, lalu tinggal <strong>PASTE / TEMPEL</strong> dan kirim pesan ya kak!
+        </p>
+
+        <div class="receipt-paper p-3 text-xs font-mono text-left">
+          <div class="flex justify-between text-gray-500">
+            <span>KODE ORDER:</span>
+            <span id="sent-code" class="font-bold text-gray-900">#JL-0001</span>
+          </div>
+          <div class="flex justify-between text-gray-500">
+            <span>PEMESAN:</span>
+            <span id="sent-name" class="font-bold text-gray-900">-</span>
+          </div>
+          <div class="flex justify-between text-gray-500">
+            <span>TOTAL:</span>
+            <span id="sent-total" class="font-bold text-indigo-700">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <a id="sent-ig-link" href="https://ig.me/m/jokify.lab" target="_blank" class="retro-btn retro-btn-purple w-full text-xs font-black py-2.5">
+            📸 Buka DM Instagram Sekarang
+          </a>
+          <button onclick="copyFormattedOrder()" class="retro-btn retro-btn-yellow w-full text-xs font-black py-2">
+            📋 Salin Ulang Format Pesanan
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
